@@ -8,3 +8,142 @@ html, body {
     height:100%;
     width:100%;
 }
+
+body{
+    background-color: rgb(255, 255, 255);
+    background-color: salmon;
+}
+
+#structure{
+    position: fixed;
+}
+#top-structure{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+}
+#top-structure img{
+    width: 50%;
+}
+#left-structure{
+  
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+#right-structure{
+  
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+#bottom-structure{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    left: 0;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: white;
+    height: 14px;
+}
+
+
+#form-div{
+    height: 100%;
+    width: 100%;
+    background-color:darkseagreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#name-form{
+    height: 19.9vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    /* background-color: red; */
+    background-image: url(https://cdn.prod.website-files.com/65ef0d86eff3b9ba6b18aef9/6601a7e6428bb6f9b3ce05b1_Vector%209.svg);
+    background-size: cover;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+form h4{
+    font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form input{
+    width: 70%;
+    padding: 12px 30px;
+    margin-top: 1vw;
+    text-align: center;
+    outline: none;
+    border: none ;
+    font-size: 3.5vw;
+}
+form button{
+    padding: 20px 30px;
+    font-size: 1vw;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none ;
+    /* transform: skew(-25deg); */
+    position: relative;
+    background-color: transparent;
+    position: absolute;
+    bottom: -15%;
+    right: -5%;
+}
+form button::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    left: 0;
+    top: 0;
+    border-radius: 7px;
+    transform: skew(-30deg);
+}
+form button span{
+    position: relative;
+    z-index: 9;
+}
+
+form button:hover span{
+    color: white;
+}
+form button:hover::after{
+    background-color: royalblue;
+}
+
+#main{
+    padding: 12px;
+    display: none;
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: royalblue;
+}
+#page1:nth-child(2){
+    background-color: cadetblue;
+}
