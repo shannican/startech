@@ -37,15 +37,26 @@ function locomotiveSetup() {
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 }
+// localStorage.clear()
 
 
-var form = document.querySelector("form")
+
+
+
 var formDiv = document.querySelector("#form-div")
+var form = document.querySelector("form")
 var main = document.querySelector("#main")
 var input = document.querySelector("form input")
 
 form.addEventListener("submit",function(e){
   e.preventDefault()
-  var user = input.value
-  console.log(user)
+  var user = input.value 
+  localStorage.setItem('username',user)
+  formDiv.style.display = "none"
+  main.style.display = "initial"
 })
+
+if(localStorage.length>0){
+  formDiv.style.display = "none"
+  main.style.display = "initial"
+}

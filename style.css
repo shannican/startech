@@ -12,10 +12,13 @@ html, body {
 body{
     background-color: rgb(255, 255, 255);
     background-color: salmon;
+    
 }
 
 #structure{
     position: fixed;
+    z-index: 9;
+    /* display: none; */
 }
 #top-structure{
     position: fixed;
@@ -58,11 +61,39 @@ body{
 #form-div{
     height: 100%;
     width: 100%;
-    background-color:darkseagreen;
+    background-color:rgb(255, 255, 255);
+    padding: 12px;
+}
+#form-div-container{
+    height: 100%;
+    width: 100%;
+    background-color: #C6D9E1;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(./images/formbg.webp);
+    background-size: cover;
+    background-position: 50% 70%;
 }
+
+#form-div-bottom{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    bottom: 9%;
+    padding: 0 3vw;
+}
+#form-div-bottom img:nth-child(1){
+    height: 11vw;
+}
+#form-div-bottom img:nth-child(2){
+    height: 5.5vw;
+}
+
+
+
 #name-form{
     height: 19.9vw;
     display: flex;
@@ -86,6 +117,7 @@ form{
 }
 form h4{
     font-size: 1.2vw;
+    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -135,15 +167,35 @@ form button:hover::after{
 }
 
 #main{
-    padding: 12px;
+    padding: 0px;
     display: none;
+    width: 100%;
 }
 
 #page1{
     height: 100vh;
     width: 100%;
-    background-color: royalblue;
+    background-color: #fff;
+    padding: 12px;
 }
-#page1:nth-child(2){
-    background-color: cadetblue;
+#page1-content{
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page1-hero{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+#page1-hero h3{
+    font-size: 1.2vw;
+    color: #154359;
+    
 }
