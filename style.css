@@ -11,10 +11,66 @@ html, body {
 
 body{
     background-color: rgb(255, 255, 255);
-    background-color: salmon;
+    /* background-color: salmon; */
+    overflow-x: hidden;
     
 }
 
+#loader{
+    height: 100%;
+    width: 100%;
+    background-color: #D6E2E5;
+
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loader .loader-text{
+    width: 25vw;
+}
+#loader .loader-text .loader-head{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.loader-head h3,.loader-head h4{
+    font-size: 1.2vw;
+    color: #154359;
+    text-transform: uppercase;
+
+}
+.loader-progress{
+    height: 30px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #154359;
+    padding: 1.5px;
+
+}
+.loader-inner{
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.loader-growth{
+    height: 100%;
+    width: 0%;
+    background-color: #95b5c2;
+    border-radius: 0px;
+    
+    transform: skewX(50deg) translateX(-20%);
+}
+
+
+#loader img{
+    scale: 1.35;
+    position: absolute;
+}
 #structure{
     position: fixed;
     z-index: 9;
@@ -181,7 +237,7 @@ form button:hover::after{
 #page1-content{
     height: 100%;
     width: 100%;
-    background-color: aquamarine;
+    background-color: #D6E2E5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,9 +249,37 @@ form button:hover::after{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    transform: translateY(-7%);
 }
 #page1-hero h3{
     font-size: 1.2vw;
     color: #154359;
     
+}
+
+.hero-imgdiv{
+    /* background-color: red; */
+    height: 6vw;
+    overflow: hidden;
+}
+.hero-imgdiv img{
+    height: 100%;
+}
+#page1-content #bg-img1{
+    left: 0%;
+    /* height: 120vh; */
+    width: 63vw;
+    top: -19%;
+    position: absolute;
+}
+#page1-content #bg-img2{
+
+    top: 21%;
+    width: 100%;
+    position: absolute;
+}
+
+#page2{
+    height: 100vh;
+    background: #D6E2E5;
 }

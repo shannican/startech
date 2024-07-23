@@ -37,26 +37,98 @@ function locomotiveSetup() {
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 }
-// localStorage.clear()
+// locomotiveSetup()
 
+function formDivAppearance() {
+  var formDiv = document.querySelector("#form-div");
+  var form = document.querySelector("form");
+  var main = document.querySelector("#main");
+  var input = document.querySelector("form input");
 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var user = input.value;
+    localStorage.setItem("username", user);
+    formDiv.style.display = "none";
+    main.style.display = "initial";
+  });
 
+  if (localStorage.length > 0) {
+    formDiv.style.display = "none";
+    main.style.display = "initial";
+  }
+}
 
+formDivAppearance();
 
-var formDiv = document.querySelector("#form-div")
-var form = document.querySelector("form")
-var main = document.querySelector("#main")
-var input = document.querySelector("form input")
+function page1Loading() {
+  let tl = gsap.timeline();
 
-form.addEventListener("submit",function(e){
-  e.preventDefault()
-  var user = input.value 
-  localStorage.setItem('username',user)
-  formDiv.style.display = "none"
-  main.style.display = "initial"
+  tl.from("#page1-hero img", {
+    y: 50,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.2,
+    delay: 0.3,
+  });
+  tl.from(
+    "#page1-hero h3",
+    {
+      y: 20,
+      opacity: 0,
+      duration: 0.3,
+      stagger: 0.2,
+    },
+    "-=0.6"
+  );
+  tl.from(
+    "#bg-img1",
+    {
+      x: -100,
+      duration: 0.4,
+    },
+    "-=0.6"
+  );
+  tl.from(
+    "#bg-img2",
+    {
+      x: 100,
+      duration: 0.4,
+    },
+    "-=0.6"
+  );
+}
+
+var growth = document.querySelector(".loader-growth");
+var loader = document.querySelector("#loader");
+var grow = 0;
+
+var loaderInterval = setInterval(function () {
+  grow++;
+
+  growth.style.width = grow + "%";
+}, 18);
+
+gsap.to("#loader img", {
+  rotate: 60,
+  duration: 10,
+});
+
+let tl = gsap.timeline()
+
+tl.to("#loader img",{
+  delay:2.3,
+  opacity:0
+})
+tl.to(".loader-text",{
+  opacity:0
+})
+tl.to("#loader",{
+  top:"-100%"
 })
 
-if(localStorage.length>0){
-  formDiv.style.display = "none"
-  main.style.display = "initial"
-}
+setTimeout(function () {
+  clearInterval(loaderInterval);
+
+  page1Loading();
+}, 3100);
