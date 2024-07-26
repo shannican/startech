@@ -1,3 +1,14 @@
+@font-face {
+    font-family: primary;
+    src: url(./fonts/65f2f3d9952b681ad9746f01_DDTBk-Regular.ttf);
+}
+@font-face {
+    font-family: secondary;
+    src: url(./fonts//NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2);
+}
+
+
+
 * {
     margin:0;
     padding:0;
@@ -26,10 +37,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 #loader .loader-text{
     width: 25vw;
+    /* background-color: red; */
 }
 #loader .loader-text .loader-head{
     display: flex;
@@ -37,9 +50,11 @@ body{
     justify-content: space-between;
 }
 .loader-head h3,.loader-head h4{
-    font-size: 1.2vw;
+    font-size: 1.15vw;
     color: #154359;
     text-transform: uppercase;
+    font-family: primary;
+    font-weight: 100;
 
 }
 .loader-progress{
@@ -252,9 +267,11 @@ form button:hover::after{
     transform: translateY(-7%);
 }
 #page1-hero h3{
-    font-size: 1.2vw;
+    font-size: 1.05vw;
     color: #154359;
-    
+    font-family: primary;
+    margin-top: 1.5vw;
+    font-weight: 200;
 }
 
 .hero-imgdiv{
@@ -280,6 +297,55 @@ form button:hover::after{
 }
 
 #page2{
+    min-height: 100vh;
+    background: #D6E2E5;
+    margin-top: -0.8vw;
+    padding: 40vh 0;
+}
+#page2-content{
     height: 100vh;
+    width: 100%;
+    position: relative;
+}
+#page2 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    mix-blend-mode: screen;
+    position: absolute;
+}
+#page2-content-text{
+    height: 100%;
+    width: 100%;
+    /* background-color: lightseagreen; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vw;
+    text-align: center;
+    color: #fff;
+    font-family: primary;
+}
+
+#page2-content-text h4{
+    font-size: 1vw;
+    font-weight: 100;
+
+}
+#page2-content-text h2{
+    font-size: 2.9vw;
+    font-weight: 100;
+}
+#page2-content-text p{
+    font-size: 1.1vw;
+    margin-top: 2vw;
+    font-weight: 100;
+
+}
+#page3{
+    min-height: 100vh;
     background: #D6E2E5;
 }
+

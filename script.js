@@ -98,7 +98,8 @@ function page1Loading() {
     "-=0.6"
   );
 }
-
+function loadingAnimation(){
+  
 var growth = document.querySelector(".loader-growth");
 var loader = document.querySelector("#loader");
 var grow = 0;
@@ -132,3 +133,18 @@ setTimeout(function () {
 
   page1Loading();
 }, 3100);
+
+}
+
+
+gsap.to("#page2",{
+  backgroundColor:"#388699",
+  scrollTrigger:{
+    trigger:"#page2",
+    scroller:"body",
+    markers:true,
+    start:"top 0%",
+    end:"top -20%",
+    scrub:2
+  }
+})
