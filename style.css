@@ -337,6 +337,12 @@ form button:hover::after{
 #page2-content-text h2{
     font-size: 2.9vw;
     font-weight: 100;
+    /* background-color: red; */
+    padding: 0 20vw;
+
+}
+#page2-content-text h2 span{
+    display: inline-block;
 }
 #page2-content-text p{
     font-size: 1.1vw;
@@ -347,5 +353,71 @@ form button:hover::after{
 #page3{
     min-height: 100vh;
     background: #D6E2E5;
+
+    padding: 30vh 10vw;
+    text-align: center;
 }
 
+#page3-heading h4{
+    font-family: primary;
+        font-size: 0.9vw;
+        font-weight: 100;
+    color: #154359;
+
+}
+
+#page3-heading h2{
+    font-size: 3.5vw;
+    margin-top: 0.3vw;
+    color: #154359;
+    font-family: primary;
+    font-weight: 100;
+}
+#page3-content{
+    height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+
+}
+
+.page3-side-content{
+    margin-top: 10vw;
+    height: 100%;
+    width: 30%;
+
+    /* background-color: lightblue; */
+}
+.elem{
+    height:5.5vw;
+    background-image: url(https://cdn.prod.website-files.com/65ef0d86eff3b9ba6b18aef9/65f86f4ba6e239d1ffadbfc4_Vector%204.svg);
+    background-size: cover;
+    width: 100%;
+    /* background-color: red; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw 6vw;
+    font-family: primary;
+    font-weight: 100;
+    font-size: 0.9vw;
+    color: #154359;
+    margin-bottom: 2vw;
+}
+
+.page3-video{
+    height: 100%;
+    width: 38%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page3-video video{
+    /* height: 100%; */
+    width: 100%;
+    object-fit: cover;
+    mix-blend-mode: darken;
+}

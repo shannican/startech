@@ -98,53 +98,91 @@ function page1Loading() {
     "-=0.6"
   );
 }
-function loadingAnimation(){
-  
-var growth = document.querySelector(".loader-growth");
-var loader = document.querySelector("#loader");
-var grow = 0;
+function loadingAnimation() {
+  var growth = document.querySelector(".loader-growth");
+  var loader = document.querySelector("#loader");
+  var grow = 0;
 
-var loaderInterval = setInterval(function () {
-  grow++;
+  var loaderInterval = setInterval(function () {
+    grow++;
 
-  growth.style.width = grow + "%";
-}, 18);
+    growth.style.width = grow + "%";
+  }, 18);
 
-gsap.to("#loader img", {
-  rotate: 60,
-  duration: 10,
-});
+  gsap.to("#loader img", {
+    rotate: 60,
+    duration: 10,
+  });
 
-let tl = gsap.timeline()
+  let tl = gsap.timeline();
 
-tl.to("#loader img",{
-  delay:2.3,
-  opacity:0
-})
-tl.to(".loader-text",{
-  opacity:0
-})
-tl.to("#loader",{
-  top:"-100%"
-})
+  tl.to("#loader img", {
+    delay: 2.3,
+    opacity: 0,
+  });
+  tl.to(".loader-text", {
+    opacity: 0,
+  });
+  tl.to("#loader", {
+    top: "-100%",
+  });
 
-setTimeout(function () {
-  clearInterval(loaderInterval);
+  setTimeout(function () {
+    clearInterval(loaderInterval);
 
-  page1Loading();
-}, 3100);
+    page1Loading();
+  }, 3100);
+}
+page1Loading();
 
+function page2Animation() {
+  gsap.to("#page2", {
+    backgroundColor: "#388699",
+    scrollTrigger: {
+      trigger: "#page2",
+      scroller: "body",
+      start: "top 0%",
+      end: "top -20%",
+      scrub: 2,
+    },
+  });
+  var page2h2 = document.querySelector("#page2-content-text h2").textContent;
+
+  var splittedText = page2h2.split(" ");
+
+  var clutter = "";
+
+  splittedText.forEach(function (elem) {
+    clutter += `<span>${elem}</span> `;
+    // console.log(elem)
+  });
+
+  document.querySelector("#page2-content-text h2").innerHTML = clutter;
+
+  var tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#page2-content-text h2",
+      start: "top 75%",
+      end: "top 45%",
+      scrub: 3,
+    },
+  });
+  tl.from("#page2-content-text h4", {
+    opacity: 0,
+    duration: 0.5,
+  });
+  tl.from("#page2-content-text h2 span", {
+    opacity: 0,
+    duration: 1,
+    stagger: 0.1,
+    y: 15,
+  });
+  tl.from("#page2-content-text p", {
+    opacity: 0,
+    duration: 0.6,
+  });
 }
 
+page2Animation()
 
-gsap.to("#page2",{
-  backgroundColor:"#388699",
-  scrollTrigger:{
-    trigger:"#page2",
-    scroller:"body",
-    markers:true,
-    start:"top 0%",
-    end:"top -20%",
-    scrub:2
-  }
-})
+
