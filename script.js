@@ -133,7 +133,7 @@ function loadingAnimation() {
     page1Loading();
   }, 3100);
 }
-page1Loading();
+// loadingAnimation()
 
 function page2Animation() {
   gsap.to("#page2", {
@@ -186,3 +186,46 @@ function page2Animation() {
 page2Animation()
 
 
+gsap.to("#page3 .page3-side-content",{
+  y:-300,
+  scrollTrigger:{
+    trigger:"#page3",
+    scroller:"body",
+    start:"top -15%",
+    end:"top -60%",
+    scrub:2,
+    pin:true
+  }
+})
+
+var tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#page4",
+    scroller:"body",
+    start:"top 0",
+    end:"top -100%",
+    scrub:1,
+    pin:true
+  }
+})
+
+tl.to("#page4-content-inner",{
+  y:'-7vw',
+  duration:1,
+  delay:0.5
+},'anim')
+tl.from("#h1two",{
+  opacity:0,
+  duration:1,
+  delay:0.5
+},'anim')
+tl.to("#page4-content-inner",{
+  y:'-14.5vw',
+  duration:1,
+  delay:0.5
+},'anim2')
+tl.from("#h1three",{
+  opacity:0,
+  duration:1,
+  delay:0.5
+},'anim2')

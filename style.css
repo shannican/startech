@@ -354,7 +354,7 @@ form button:hover::after{
     min-height: 100vh;
     background: #D6E2E5;
 
-    padding: 30vh 10vw;
+    padding: 30vh 10vw 10vh 10vw;
     text-align: center;
 }
 
@@ -420,4 +420,41 @@ form button:hover::after{
     width: 100%;
     object-fit: cover;
     mix-blend-mode: darken;
+}
+
+#page4{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    background-color: #D6E2E5;
+    margin-top: -1px;
+    background-image: url(https://cdn.prod.website-files.com/65ef0d86eff3b9ba6b18aef9/65f96092a0c72c74c0e9518d_Frame%201813.png);
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page4-content{
+    margin-top: -10vw;
+    height: 6vw;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+
+#page4-content h1{
+    font-size: 5vw;
+    font-weight: 100;
+    color: #154359;
+    text-align: center;
+    font-family: primary;
+    margin-bottom: 1vw;
+    text-transform: uppercase;
+}
+
+#page5{
+    height: 100vh;
 }
