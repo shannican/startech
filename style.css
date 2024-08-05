@@ -2,6 +2,7 @@
     font-family: primary;
     src: url(./fonts/65f2f3d9952b681ad9746f01_DDTBk-Regular.ttf);
 }
+
 @font-face {
     font-family: secondary;
     src: url(./fonts//NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2);
@@ -10,24 +11,44 @@
 
 
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
 }
 
-body{
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+body {
     background-color: rgb(255, 255, 255);
     /* background-color: salmon; */
     overflow-x: hidden;
-    
+
 }
 
-#loader{
+#loader {
     height: 100%;
     width: 100%;
     background-color: #D6E2E5;
@@ -37,19 +58,21 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
+    /* display: none; */
 }
 
-#loader .loader-text{
+#loader .loader-text {
     width: 25vw;
     /* background-color: red; */
 }
-#loader .loader-text .loader-head{
+
+#loader .loader-text .loader-head {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 }
-.loader-head h3,.loader-head h4{
+
+.loader-head h3, .loader-head h4 {
     font-size: 1.15vw;
     color: #154359;
     text-transform: uppercase;
@@ -57,7 +80,8 @@ body{
     font-weight: 100;
 
 }
-.loader-progress{
+
+.loader-progress {
     height: 30px;
     margin-top: 10px;
     width: 100%;
@@ -66,32 +90,36 @@ body{
     padding: 1.5px;
 
 }
-.loader-inner{
+
+.loader-inner {
     height: 100%;
     width: 100%;
     border-radius: 50px;
     overflow: hidden;
 }
-.loader-growth{
+
+.loader-growth {
     height: 100%;
     width: 0%;
     background-color: #95b5c2;
     border-radius: 0px;
-    
+
     transform: skewX(50deg) translateX(-20%);
 }
 
 
-#loader img{
+#loader img {
     scale: 1.35;
     position: absolute;
 }
-#structure{
+
+#structure {
     position: fixed;
     z-index: 9;
     /* display: none; */
 }
-#top-structure{
+
+#top-structure {
     position: fixed;
     width: 100%;
     top: 0;
@@ -99,24 +127,48 @@ body{
     display: flex;
     align-items: flex-start;
 }
-#top-structure img{
+
+#top-structure img {
     width: 50%;
 }
-#left-structure{
-  
+
+#left-structure {
+
     position: fixed;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
 }
-#right-structure{
-  
+
+#left-structure .line-left {
+    position: fixed;
+    left: 0;
+    top: -40%;
+    height: 100vh;
+    width: 11px;
+    background-color: #F4F9FB;
+
+}
+
+#right-structure {
+
     position: fixed;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
 }
-#bottom-structure{
+
+#right-structure .line-right {
+    position: fixed;
+    right: 0;
+    top: -40%;
+    height: 100vh;
+    width: 11px;
+    background-color: #F4F9FB;
+
+}
+
+#bottom-structure {
     position: fixed;
     bottom: 0;
     display: flex;
@@ -129,13 +181,14 @@ body{
 }
 
 
-#form-div{
-    height: 100%;
+#form-div {
+    height: 100vh;
     width: 100%;
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     padding: 12px;
 }
-#form-div-container{
+
+#form-div-container {
     height: 100%;
     width: 100%;
     background-color: #C6D9E1;
@@ -147,7 +200,7 @@ body{
     background-position: 50% 70%;
 }
 
-#form-div-bottom{
+#form-div-bottom {
     width: 100%;
     position: fixed;
     display: flex;
@@ -156,16 +209,18 @@ body{
     bottom: 9%;
     padding: 0 3vw;
 }
-#form-div-bottom img:nth-child(1){
+
+#form-div-bottom img:nth-child(1) {
     height: 11vw;
 }
-#form-div-bottom img:nth-child(2){
+
+#form-div-bottom img:nth-child(2) {
     height: 5.5vw;
 }
 
 
 
-#name-form{
+#name-form {
     height: 19.9vw;
     display: flex;
     align-items: center;
@@ -176,7 +231,7 @@ body{
     background-size: cover;
 }
 
-form{
+form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,27 +241,37 @@ form{
     position: relative;
 
 }
-form h4{
+
+form h4 {
     font-size: 1.2vw;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-form input{
+form input {
     width: 70%;
     padding: 12px 30px;
     margin-top: 1vw;
     text-align: center;
     outline: none;
-    border: none ;
+    border: none;
+    background-color: transparent;
     font-size: 3.5vw;
+    color: #fff;
 }
-form button{
+
+form input::placeholder{
+    color: #fff;
+}
+
+
+
+form button {
     padding: 20px 30px;
     font-size: 1vw;
     text-transform: uppercase;
     border-radius: 5px;
-    border: none ;
+    border: none;
     /* transform: skew(-25deg); */
     position: relative;
     background-color: transparent;
@@ -214,7 +279,8 @@ form button{
     bottom: -15%;
     right: -5%;
 }
-form button::after{
+
+form button::after {
     content: "";
     height: 100%;
     width: 100%;
@@ -225,31 +291,34 @@ form button::after{
     border-radius: 7px;
     transform: skew(-30deg);
 }
-form button span{
+
+form button span {
     position: relative;
     z-index: 9;
 }
 
-form button:hover span{
+form button:hover span {
     color: white;
 }
-form button:hover::after{
+
+form button:hover::after {
     background-color: royalblue;
 }
 
-#main{
+#main {
     padding: 0px;
     display: none;
     width: 100%;
 }
 
-#page1{
+#page1 {
     height: 100vh;
     width: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 12px;
 }
-#page1-content{
+
+#page1-content {
     height: 100%;
     width: 100%;
     background-color: #D6E2E5;
@@ -257,7 +326,8 @@ form button:hover::after{
     align-items: center;
     justify-content: center;
 }
-#page1-hero{
+
+#page1-hero {
     width: 60%;
     display: flex;
     align-items: center;
@@ -266,7 +336,8 @@ form button:hover::after{
     text-align: center;
     transform: translateY(-7%);
 }
-#page1-hero h3{
+
+#page1-hero h3 {
     font-size: 1.05vw;
     color: #154359;
     font-family: primary;
@@ -274,47 +345,55 @@ form button:hover::after{
     font-weight: 200;
 }
 
-.hero-imgdiv{
+.hero-imgdiv {
     /* background-color: red; */
     height: 6vw;
     overflow: hidden;
 }
-.hero-imgdiv img{
+
+.hero-imgdiv img {
     height: 100%;
 }
-#page1-content #bg-img1{
+
+#page1-content #bg-img1 {
     left: 0%;
     /* height: 120vh; */
     width: 63vw;
     top: -19%;
     position: absolute;
 }
-#page1-content #bg-img2{
+
+#page1-content #bg-img2 {
 
     top: 21%;
     width: 100%;
     position: absolute;
 }
 
-#page2{
+#page2 {
     min-height: 100vh;
     background: #D6E2E5;
     margin-top: -0.8vw;
-    padding: 40vh 0;
+    /* padding: 40vh 0; */
+    padding-top: 40vh;
+    padding-bottom: 10vh;
 }
-#page2-content{
+
+#page2-content {
     height: 100vh;
     width: 100%;
     position: relative;
 }
-#page2 video{
+
+#page2 video {
     height: 100%;
     width: 100%;
     object-fit: cover;
     mix-blend-mode: screen;
     position: absolute;
 }
-#page2-content-text{
+
+#page2-content-text {
     height: 100%;
     width: 100%;
     /* background-color: lightseagreen; */
@@ -329,28 +408,32 @@ form button:hover::after{
     font-family: primary;
 }
 
-#page2-content-text h4{
+#page2-content-text h4 {
     font-size: 1vw;
     font-weight: 100;
 
 }
-#page2-content-text h2{
+
+#page2-content-text h2 {
     font-size: 2.9vw;
     font-weight: 100;
     /* background-color: red; */
     padding: 0 20vw;
 
 }
-#page2-content-text h2 span{
+
+#page2-content-text h2 span {
     display: inline-block;
 }
-#page2-content-text p{
+
+#page2-content-text p {
     font-size: 1.1vw;
     margin-top: 2vw;
     font-weight: 100;
 
 }
-#page3{
+
+#page3 {
     min-height: 100vh;
     background: #D6E2E5;
 
@@ -358,40 +441,42 @@ form button:hover::after{
     text-align: center;
 }
 
-#page3-heading h4{
+#page3-heading h4 {
     font-family: primary;
-        font-size: 0.9vw;
-        font-weight: 100;
+    font-size: 0.9vw;
+    font-weight: 100;
     color: #154359;
 
 }
 
-#page3-heading h2{
+#page3-heading h2 {
     font-size: 3.5vw;
     margin-top: 0.3vw;
     color: #154359;
     font-family: primary;
     font-weight: 100;
 }
-#page3-content{
+
+#page3-content {
     height: 100vh;
     width: 100%;
     /* background-color: red; */
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
 
 }
 
-.page3-side-content{
+.page3-side-content {
     margin-top: 10vw;
     height: 100%;
     width: 30%;
 
     /* background-color: lightblue; */
 }
-.elem{
-    height:5.5vw;
+
+.elem {
+    height: 5.5vw;
     background-image: url(https://cdn.prod.website-files.com/65ef0d86eff3b9ba6b18aef9/65f86f4ba6e239d1ffadbfc4_Vector%204.svg);
     background-size: cover;
     width: 100%;
@@ -408,21 +493,23 @@ form button:hover::after{
     margin-bottom: 2vw;
 }
 
-.page3-video{
+.page3-video {
     height: 100%;
     width: 38%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -10%;
 }
-.page3-video video{
+
+.page3-video video {
     /* height: 100%; */
     width: 100%;
     object-fit: cover;
     mix-blend-mode: darken;
 }
 
-#page4{
+#page4 {
     min-height: 100vh;
     width: 100%;
     /* background-color: red; */
@@ -437,7 +524,7 @@ form button:hover::after{
     justify-content: center;
 }
 
-#page4-content{
+#page4-content {
     margin-top: -10vw;
     height: 6vw;
     overflow: hidden;
@@ -445,7 +532,7 @@ form button:hover::after{
 }
 
 
-#page4-content h1{
+#page4-content h1 {
     font-size: 5vw;
     font-weight: 100;
     color: #154359;
@@ -455,6 +542,41 @@ form button:hover::after{
     text-transform: uppercase;
 }
 
-#page5{
+#page5 {
+    min-height: 100vh;
+    padding: 10vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#certificate {
     height: 100vh;
+    border-radius: 15px;
+    width: 47vw;
+    /* background-color: #154359; */
+    background-color: #154359;
+    background: url(https://cdn.prod.website-files.com/65ef0d86eff3b9ba6b18aef9/65f97abb66058571d0e07bfc_certificate-line.svg), linear-gradient(to top right, #152A31, #204e61, #24627D);
+    background-size: cover;
+position: relative;
+}
+
+#certificate img{
+    width: 100%;
+    position: absolute;
+}
+
+#certificate-content{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* background-color: red; */
+    padding: 7vw;
+    text-align: center;
+    color: #fff;
+}
+#certificate-content h1{
+    font-size: 3vw;
+    font-family: primary;
 }
