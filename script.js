@@ -9,8 +9,6 @@ function smoothScrolling() {
   requestAnimationFrame(raf);
 }
 
-smoothScrolling()
-
 function formDivAppearance() {
   var formDiv = document.querySelector("#form-div");
   var form = document.querySelector("form");
@@ -23,6 +21,8 @@ function formDivAppearance() {
     localStorage.setItem("username", user);
     formDiv.style.display = "none";
     main.style.display = "initial";
+
+    page1Loading()
   });
 
   if (localStorage.length > 0) {
@@ -30,8 +30,6 @@ function formDivAppearance() {
     main.style.display = "initial";
   }
 }
-
-formDivAppearance();
 
 function page1Loading() {
   let tl = gsap.timeline();
@@ -98,6 +96,10 @@ function loadingAnimation() {
   tl.to("#loader", {
     top: "-100%",
   });
+  tl.to("#loader",{
+    display:"none",
+    delay:0.5
+  })
 
   setTimeout(function () {
     clearInterval(loaderInterval);
@@ -105,7 +107,6 @@ function loadingAnimation() {
     page1Loading();
   }, 3100);
 }
-loadingAnimation()
 
 function page2Animation() {
   var tl2 = gsap.timeline({
@@ -162,7 +163,6 @@ function page2Animation() {
   });
 }
 
-page2Animation();
 
 function page3and4Animation() {
   gsap.to("#page3 .page3-side-content", {
@@ -225,10 +225,21 @@ function page3and4Animation() {
     },
     "anim2"
   );
+
+document.querySelector("#certificate-content h1").innerHTML = localStorage.getItem('username')
+
 }
 
+
+
+
+
+
+loadingAnimation()
+formDivAppearance();
+smoothScrolling()
+page2Animation();
 page3and4Animation();
 
 
-
-document.querySelector("#certificate-content h1").innerHTML = localStorage.getItem('username')
+// localStorage.clear()
