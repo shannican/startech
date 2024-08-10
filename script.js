@@ -119,7 +119,7 @@ function page2Animation() {
     },
   });
 
-  tl2.to("#page2, #page3", {
+  tl2.to("#page2, #page3, #page1-content", {
     backgroundColor: "#388699",
   });
   tl2.to("#page2, #page3", {
@@ -192,7 +192,7 @@ function page3and4Animation() {
   tl.to(
     "#page4-content-inner",
     {
-      y: "-7vw",
+      y: "-12vh",
       duration: 1,
       delay: 0.5,
     },
@@ -210,7 +210,7 @@ function page3and4Animation() {
   tl.to(
     "#page4-content-inner",
     {
-      y: "-14.5vw",
+      y: "-24.5vh",
       duration: 1,
       delay: 0.5,
     },
